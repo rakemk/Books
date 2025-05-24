@@ -1,9 +1,8 @@
-package com.book.Books.Dashboard.Controller;
+package com.book.Books.Dashboard.controller;
 
-import com.book.Books.Dashboard.Dto.BookDto;
-import com.book.Books.Dashboard.Service.BookService;
+import com.book.Books.Dashboard.dto.BookDto;
+import com.book.Books.Dashboard.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
