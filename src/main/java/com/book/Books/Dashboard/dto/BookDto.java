@@ -1,4 +1,4 @@
-package com.book.Books.Dashboard.Dto;
+package com.book.Books.Dashboard.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
@@ -27,4 +27,7 @@ BookDto {
 
     @JsonProperty("available")
     private boolean available;
+
+    @JsonProperty("quantity")
+    private int quantity;
 }

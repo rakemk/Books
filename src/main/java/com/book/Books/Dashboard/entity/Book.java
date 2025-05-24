@@ -1,4 +1,4 @@
-package com.book.Books.Dashboard.Entity;
+package com.book.Books.Dashboard.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -36,11 +36,14 @@ public class Book {
     @JsonProperty("available")
     private boolean available;
 
-
-    public Book(String name, String type, String language, boolean available) {
+    @Column(name = "quantity", nullable = false)
+    @JsonProperty("quantity")
+    private int quantity;
+    public Book(String name, String type, String language, boolean available,int quantity) {
         this.name = name;
         this.type = type;
         this.language = language;
         this.available = available;
+        this.quantity = quantity;
     }
 }
