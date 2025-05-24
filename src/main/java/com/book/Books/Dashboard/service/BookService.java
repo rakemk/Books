@@ -1,8 +1,8 @@
-package com.book.Books.Dashboard.Service;
+package com.book.Books.Dashboard.service;
 
-import com.book.Books.Dashboard.Dto.BookDto;
-import com.book.Books.Dashboard.Repository.BookRepository;
-import com.book.Books.Dashboard.Entity.Book;
+import com.book.Books.Dashboard.dto.BookDto;
+import com.book.Books.Dashboard.repository.BookRepository;
+import com.book.Books.Dashboard.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,8 @@ public class BookService {
                 .name(bookDto.getName())
                 .type(bookDto.getType())
                 .language(bookDto.getLanguage())
-                .available(bookDto.isAvailable())
+                 .available(bookDto.isAvailable())
+                .quantity(bookDto.getQuantity())
                 .build();
 
         Book savedBook = bookRepository.save(book);
@@ -31,7 +32,8 @@ public class BookService {
                 savedBook.getName(),
                 savedBook.getType(),
                 savedBook.getLanguage(),
-                savedBook.isAvailable()
+                savedBook.isAvailable(),
+                savedBook.getQuantity()
         );
     }
     private Long getNextAvailableId() {
@@ -59,7 +61,8 @@ public class BookService {
                         book.getName(),
                         book.getType(),
                         book.getLanguage(),
-                        book.isAvailable()))  // Convert Book to BookDto
+                        book.isAvailable(),
+                        book.getQuantity()))  // Convert Book to BookDto
                 .collect(Collectors.toList());  // Collect the result into a List
     }
 
@@ -70,6 +73,7 @@ public class BookService {
         book.setType(bookDTO.getType());
         book.setLanguage(bookDTO.getLanguage());
         book.setAvailable(bookDTO.isAvailable());
+        book.setQuantity(bookDTO.getQuantity());
         return convertToDTO(bookRepository.save(book));
     }
 
@@ -78,6 +82,6 @@ public class BookService {
     }
 
     private BookDto convertToDTO(Book book) {
-        return new BookDto(book.getId(), book.getName(), book.getType(), book.getLanguage(), book.isAvailable());
+        return new BookDto(book.getId(), book.getName(), book.getType(), book.getLanguage(), book.isAvailable(), book.getQuantity());
     }
 }
