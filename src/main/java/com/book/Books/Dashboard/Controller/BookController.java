@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/books")
+@CrossOrigin(value = "*")
 public class BookController {
     @Autowired
     private BookService bookService;

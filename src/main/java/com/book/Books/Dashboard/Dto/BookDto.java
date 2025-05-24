@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookDto {
+public class
+BookDto {
     @Id
     @Column(nullable = false)
     private Long id;
