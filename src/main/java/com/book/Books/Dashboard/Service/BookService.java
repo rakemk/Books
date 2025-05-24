@@ -14,12 +14,42 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    public BookDto addBook(BookDto bookDto){
-        Book book = new Book(bookDto.getName(),bookDto.getType(),bookDto.getLanguage(),bookDto.isAvailable());
+    public BookDto addBook(BookDto bookDto) {
+        Long nextId = getNextAvailableId();
+
+        Book book = Book.builder()
+                .id(nextId)
+                .name(bookDto.getName())
+                .type(bookDto.getType())
+                .language(bookDto.getLanguage())
+                .available(bookDto.isAvailable())
+                .build();
+
         Book savedBook = bookRepository.save(book);
-        bookDto.setId(savedBook.getId());
-        return bookDto;
+        return new BookDto(
+                savedBook.getId(),
+                savedBook.getName(),
+                savedBook.getType(),
+                savedBook.getLanguage(),
+                savedBook.isAvailable()
+        );
     }
+    private Long getNextAvailableId() {
+        List<Long> existingIds = bookRepository.findAll().stream()
+                .map(Book::getId)
+                .sorted()
+                .toList();
+
+        long expectedId = 1;
+        for (Long id : existingIds) {
+            if (!id.equals(expectedId)) {
+                break; // Found a gap
+            }
+            expectedId++;
+        }
+        return expectedId;
+    }
+
 
     public List<BookDto> getAllBooks() {
         List<Book> books = bookRepository.findAll();
