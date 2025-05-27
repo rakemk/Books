@@ -1,4 +1,4 @@
-package com.book.Books.Dashboard.dto;
+package com.book.Books.books.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
