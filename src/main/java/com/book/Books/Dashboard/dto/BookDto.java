@@ -1,4 +1,4 @@
-package com.book.Books.books.dto;
+package com.book.Books.Dashboard.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookDto {
+public class
+BookDto {
     @Id
     @Column(nullable = false)
     private Long id;

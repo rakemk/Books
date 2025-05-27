@@ -1,10 +1,9 @@
-package com.book.Books.books.service;
+package com.book.Books.Dashboard.service;
 
-import com.book.Books.books.dto.UserDto;
-import com.book.Books.books.entity.User;
-import com.book.Books.books.repository.UserRepository;
+import com.book.Books.Dashboard.dto.UserDto;
+import com.book.Books.Dashboard.entity.User;
+import com.book.Books.Dashboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

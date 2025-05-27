@@ -1,4 +1,4 @@
-package com.book.Books.books.entity;
+package com.book.Books.Dashboard.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;

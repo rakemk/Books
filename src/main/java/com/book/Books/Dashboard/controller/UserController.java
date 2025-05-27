@@ -1,7 +1,7 @@
-package com.book.Books.books.controller;
+package com.book.Books.Dashboard.controller;
 
-import com.book.Books.books.dto.UserDto;
-import com.book.Books.books.service.UserService;
+import com.book.Books.Dashboard.dto.UserDto;
+import com.book.Books.Dashboard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

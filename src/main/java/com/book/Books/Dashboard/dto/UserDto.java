@@ -1,4 +1,4 @@
-package com.book.Books.books.dto;
+package com.book.Books.Dashboard.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

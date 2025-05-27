@@ -1,7 +1,7 @@
-package com.book.Books.books.controller;
+package com.book.Books.Dashboard.controller;
 
-import com.book.Books.books.dto.BookDto;
-import com.book.Books.books.service.BookService;
+import com.book.Books.Dashboard.dto.BookDto;
+import com.book.Books.Dashboard.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/books")
+@CrossOrigin(value = "*")
 public class BookController {
     @Autowired
     private BookService bookService;

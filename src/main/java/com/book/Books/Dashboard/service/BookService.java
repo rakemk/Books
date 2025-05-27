@@ -1,8 +1,8 @@
-package com.book.Books.books.service;
+package com.book.Books.Dashboard.service;
 
-import com.book.Books.books.dto.BookDto;
-import com.book.Books.books.repository.BookRepository;
-import com.book.Books.books.entity.Book;
+import com.book.Books.Dashboard.dto.BookDto;
+import com.book.Books.Dashboard.repository.BookRepository;
+import com.book.Books.Dashboard.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
