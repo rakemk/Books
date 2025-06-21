@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class CatalogDto {
     private Long id;
     private String username;

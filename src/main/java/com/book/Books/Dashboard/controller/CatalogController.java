@@ -16,7 +16,8 @@ public class CatalogController {
     public CatalogDto addCatalog(@RequestBody CatalogDto catalogDto) {
         return catalogService.addCatalog(catalogDto);
     }
-//
+
+
 //    @GetMapping
 //    public List<CatalogDto> getAllCatalogs() {
 //        return catalogService.getAllCatalogs();
